@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Entry</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0e0e0e;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f03a17;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff7b00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Please Enter the Password</h2>
+        <input type="password" id="password" placeholder="Enter password" />
+        <br>
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <script>
+        const correctPassword = "FLASH"; // Set your password here
+
+        function checkPassword() {
+            const userPassword = document.getElementById("password").value;
+            if (userPassword === correctPassword) {
+                window.location.href = "index.html"; // Redirect to the main content page
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+    </script>
+</body>
+</html>
